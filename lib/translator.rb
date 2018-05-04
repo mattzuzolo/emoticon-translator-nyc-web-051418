@@ -27,7 +27,7 @@ def load_library (file_path)
     #   end
     # }
     
-      usa, jp = emoticon_icons_array
+      usa, jp << emoticon_icons_array
       #binding.pry
     
       emoticon_dictionary["get_emoticon"][usa] = jp
