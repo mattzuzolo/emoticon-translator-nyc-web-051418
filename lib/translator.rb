@@ -87,7 +87,9 @@ end #end method
 
 
 def get_english_meaning (file_path, emoticon)
-  # code goes here
+  
+  emoticon_dictionary = load_library(file_path)
+  
 end
 
 
