@@ -4,13 +4,14 @@ require 'pry'
 
 def load_library (file_path)
   
-  emoticon_file = YAML.load_file(file_path)
   
-
+  
   emoticon_dictionary = {}
   emoticon_dictionary["get_meaning"] = {}
   emoticon_dictionary["get_emoticon"] = {}
   
+  emoticon_file = YAML.load_file(file_path)
+
   
   emoticon_file.each do |emoticon_text, emoticon_icons_array|
     
@@ -24,8 +25,8 @@ def load_library (file_path)
     
       usa, jp = emoticon_icons_array
     
-      emoticon_dictionary["get_meaning"][usa] = emoticon_text
-      emoticon_dictionary["get_meaning"][jp] = emoticon_icons_array
+      emoticon_dictionary["get_meaning"][usa] = jp
+      emoticon_dictionary["get_meaning"][jp] = emoticon_text
     
      # binding.pry
     emoticon_dictionary
