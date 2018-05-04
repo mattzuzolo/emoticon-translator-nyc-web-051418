@@ -7,8 +7,12 @@ def load_library (file_path)
   
   
   emoticon_dictionary = {}
-  emoticon_dictionary["get_meaning"] = {} #get meaning keys are JP emoji and keys are meaning
-  emoticon_dictionary["get_emoticon"] = {} #get emoticon keys are english
+  emoticon_dictionary["get_meaning"] = {} #get meaning keys are JP emoji and values are plain text
+  emoticon_dictionary["get_emoticon"] = {} #get emoticon keys are usa emojis and keys are jp emojis
+  
+  
+  # GET MEANING ==> { JP-EMOJI ==> PLAIN TEXT}
+  # GET EMOTICON ==> { USA-EMOJI ==> JP-EMOJI}
   
   emoticon_file = YAML.load_file(file_path)
 
@@ -55,16 +59,36 @@ def load_library (file_path)
  # binding.pry
 end #end load_library
 
-
-
-
 # emoticon_text_array << emoticon_text
 
 
 
-def get_japanese_emoticon
-  # code goes here
-end
+
+
+#EMOTICON DICTIONARY ==>
+
+# GET MEANING ==> { JP-EMOJI ==> PLAIN TEXT}
+# GET EMOTICON ==> { USA-EMOJI ==> JP-EMOJI}
+
+
+def get_japanese_emoticon (file_path, emoticon)
+  
+  emoticon_dictionary = load_library (file_path)
+  
+  emoticon_dictionary.each do |meaning_or_emoticon, conversion_pairs|
+      conversion_pairs.each do |key, value|
+        
+        if emoticon == value
+        
+      end #end conversion_pairs.each
+  end #end emoticon_dictionary.each
+  
+end #end method
+
+
+
+
+
 
 def get_english_meaning
   # code goes here
