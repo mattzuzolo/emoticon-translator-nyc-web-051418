@@ -22,9 +22,10 @@ def load_library (file_path)
       end
     }
     
-      emoticon_dictionary["get_meaning"][usa] = {emoticon_icons_array}
-      emoticon_dictionary["get_meaning"][jp] = {emoticon_text}
+      emoticon_dictionary["get_meaning"][usa] = emoticon_text
+      emoticon_dictionary["get_meaning"][jp] = emoticon_icons_array
     
+      binding.pry
     emoticon_dictionary
   end
   
