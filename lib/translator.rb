@@ -7,8 +7,8 @@ def load_library (file_path)
   
   
   emoticon_dictionary = {}
-  emoticon_dictionary["get_meaning"] = {}
-  emoticon_dictionary["get_emoticon"] = {}
+  emoticon_dictionary["get_meaning"] = {} #get meaning keys are JP emoji and keys are meaning
+  emoticon_dictionary["get_emoticon"] = {} #get emoticon keys are english
   
   emoticon_file = YAML.load_file(file_path)
 
@@ -25,7 +25,7 @@ def load_library (file_path)
     
       usa, jp = emoticon_icons_array
     
-      emoticon_dictionary["get_meaning"][usa] = jp
+      emoticon_dictionary["get_emoticon"][usa] = jp
       emoticon_dictionary["get_meaning"][jp] = emoticon_text
     
      # binding.pry
@@ -37,11 +37,11 @@ def load_library (file_path)
   emoticon_file.each do |emoticon_text, emoticon_icons_array|
     #     emoticon_icons_array.each_with_index { |item, index|
     #     #binding.pry
-        if index == 0
-          emoticon_dictionary["get_emoticon"] << emoticon_icons_array[index]
-        elsif index == 1
-          emoticon_dictionary["get_meaning"] << emoticon_icons_array[index]
-        end
+        # if index == 0
+        #   emoticon_dictionary["get_emoticon"] << emoticon_icons_array[index]
+        # elsif index == 1
+        #   emoticon_dictionary["get_meaning"] << emoticon_icons_array[index]
+        # end
         
     # }
       
