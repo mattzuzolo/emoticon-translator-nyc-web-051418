@@ -14,18 +14,20 @@ def load_library (file_path)
   
   emoticon_file.each do |emoticon_text, emoticon_icons_array|
     
-    emoticon_icon_array.each_with_index { |item, index|
-      if index == 0
-          usa = item
-      elsif index == 1
-          jp = item
-      end
-    }
+    # emoticon_icon_array.each_with_index { |item, index|
+    #   if index == 0
+    #       usa = item
+    #   elsif index == 1
+    #       jp = item
+    #   end
+    # }
+    
+      usa, jp = emoticon_icons_array
     
       emoticon_dictionary["get_meaning"][usa] = emoticon_text
       emoticon_dictionary["get_meaning"][jp] = emoticon_icons_array
     
-      binding.pry
+     # binding.pry
     emoticon_dictionary
   end
   
