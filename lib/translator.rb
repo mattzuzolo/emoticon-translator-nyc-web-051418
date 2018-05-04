@@ -73,16 +73,12 @@ end #end load_library
 
 def get_japanese_emoticon (file_path, emoticon)
   
-  emoticon_dictionary = load_library (file_path)
+
+  emoticon_dictionary = load_library(file_path)
   
-  emoticon_dictionary.each do |meaning_or_emoticon, conversion_pairs|
-      conversion_pairs.each do |key, value|
-        
-        if emoticon == value
-        
-      end #end conversion_pairs.each
-  end #end emoticon_dictionary.each
-  
+  emoticon_dictionary["get_meaning"][emoticon] ? emoticon_dictionary["get_meaning"][emoticon] : "Sorry, that emoticon was not found"
+
+
 end #end method
 
 
