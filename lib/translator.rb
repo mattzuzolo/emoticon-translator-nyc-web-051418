@@ -28,6 +28,7 @@ def load_library (file_path)
     # }
     
       usa, jp = emoticon_icons_array
+      #binding.pry
     
       emoticon_dictionary["get_emoticon"][usa] = jp
       emoticon_dictionary["get_meaning"][jp] = emoticon_text
@@ -76,8 +77,8 @@ def get_japanese_emoticon (file_path, emoticon)
 
   emoticon_dictionary = load_library(file_path)
   
-  emoticon_dictionary["get_meaning"][emoticon] ? emoticon_dictionary["get_meaning"][emoticon] : "Sorry, that emoticon was not found"
-
+  
+  emoticon_dictionary["get_emoticon"][emoticon] ? emoticon_dictionary["get_emoticon"][emoticon] : "Sorry, that emoticon was not found"
 
 end #end method
 
@@ -86,8 +87,12 @@ end #end method
 
 
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning (file_path, emoticon)
+  
+  emoticon_dictionary = load_library(file_path)
+  
+  emoticon_dictionary["get_meaning"][emoticon] ? emoticon_dictionary["get_meaning"][emoticon] : "Sorry, that emoticon was not found"
+  
 end
 
 
