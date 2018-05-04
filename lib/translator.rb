@@ -74,10 +74,10 @@ end #end load_library
 def get_japanese_emoticon (file_path, emoticon)
   
 
-  #emoticon_dictionary = load_library(file_path)
-  #emoticon_dictionary["get_emoticon"][emoticon] ? emoticon_dictionary["get_emoticon"][emoticon] : "Sorry, that emoticon was not found"
+  emoticon_dictionary = load_library(file_path)
   
-  load_library(file_path)["get_emoticon"][emoticon] ? load_library(file_path)["get_emoticon"][emoticon] : "Sorry, that emoticon was not found"
+  
+  emoticon_dictionary["get_emoticon"][emoticon] ? emoticon_dictionary["get_emoticon"][emoticon] : "Sorry, that emoticon was not found"
 
 end #end method
 
